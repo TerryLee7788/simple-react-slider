@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Slider from './components/Slider';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+    constructor (props) {
+        super(props);
+        this.state = {
+            sliderData: [
+                '111',
+                '222',
+                '333',
+                '444',
+                '555',
+            ]
+        };
+
+    }
+
+    render () {
+
+        return (
+            <div className="slider-demo">
+                <h1>simple slider demo</h1>
+                <Slider
+                    sliderData={this.state.sliderData}
+                />
+
+            </div>
+        )
+
+    }
+
 }
 
 export default App;
